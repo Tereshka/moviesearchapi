@@ -1,0 +1,18 @@
+<%include partials/header%>
+
+<div>
+	<a href="/">Back to Search</a>
+	<div class="m-2 p-2">
+		<h1><%=data["Title"]%> (<%=data["Year"]%>)</h1>
+		<img src="<%=data["Poster"]%>">
+	</div>
+	<div>
+		<p><b>Genre:</b> <%=data["Genre"]%></p>
+		<p><b>Type:</b> <%=data["Type"]%></p>
+		<p><b>Actors:</b> <%=data["Actors"]%></p>
+		<p><b>Plot:</b> <%=data["Plot"]%></p>
+		<p><b>Country:</b> <%=data["Country"]%></p>
+	</div>
+</div>
+
+<%include partials/footer%>
