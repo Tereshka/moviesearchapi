@@ -1,17 +1,27 @@
 <%include partials/header%>
 
-<h1>Your results</h1>
-
-<a href="/">Back to Search</a>
-
-<%data["Search"].forEach(function(movie){%>
-	<div class="card m-2 p-2 flex-row flex-wrap">
-		<img class="card-img-left" src="<%=movie["Poster"]%>" width="170px" height="250px >
-		<div class="card-body">
-			<h2 class="card-title"><a href="/movie/<%=movie["imdbID"]%>"><%=movie["Title"]%> (<%=movie["Year"]%>)</a></h2>
-			<p class="card-text"></p>
-		</div>
+<div class="container text-center">
+	<div class="row">
+		<h1 class="col">Your results</h1>
 	</div>
-<%})%>
+	<div class="row text-left mb-1">
+		<a class="col" href="/">Back to Search</a>
+	</div>
+
+	<%data["Search"].forEach(function(movie){%>
+		<div class="row">
+			<div class="col">
+				<div class="card m-2 p-1 flex-row flex-wrap justify-content-center shadow" style="">
+					<img class="card-img-left" src="<%=movie["Poster"]%>" width="170px" height="250px" />
+					<div class="card-body">
+						<h2 class="card-title"><a href="/movie/<%=movie["imdbID"]%>"><%=movie["Title"]%> (<%=movie["Year"]%>)</a></h2>
+						<p class="card-text"></p>
+					</div>
+				</div>
+			</div>
+		</div>	
+	<%})%>
+
+</div>
 
 <%include partials/footer%>

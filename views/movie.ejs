@@ -1,18 +1,22 @@
 <%include partials/header%>
 
-<div>
-	<a href="/">Back to Search</a>
-	<div class="m-2 p-2">
-		<h1><%=data["Title"]%> (<%=data["Year"]%>)</h1>
-		<img src="<%=data["Poster"]%>">
+<div class="container">
+	<div class="row">
+		<div class="col">
+			<a href="/">Back to Search</a>
+		</div>
 	</div>
-	<div>
-		<p><b>Genre:</b> <%=data["Genre"]%></p>
-		<p><b>Type:</b> <%=data["Type"]%></p>
-		<p><b>Actors:</b> <%=data["Actors"]%></p>
-		<p><b>Plot:</b> <%=data["Plot"]%></p>
-		<p><b>Country:</b> <%=data["Country"]%></p>
+	<div class="row text-center">
+		<div class="col">
+			<h1><%=data["Title"]%> (<%=data["Year"]%>)</h1>
+			<img class="img-fluid" src="<%=data["Poster"]%>" />
+		</div>
 	</div>
+	<div class="row"><p class="col"><b>Genre:</b> <%=data["Genre"]%></p></div>
+	<div class="row"><p class="col"><b>Type:</b> <%=data["Type"]%></p></div>
+	<div class="row"><p class="col"><b>Actors:</b> <%=data["Actors"]%></p></div>
+	<div class="row"><p class="col"><b>Plot:</b> <%=data["Plot"]%></p></div>
+	<div class="row"><p class="col"><b>Country:</b> <%=data["Country"]%></p></div>
 </div>
 
 <%include partials/footer%>

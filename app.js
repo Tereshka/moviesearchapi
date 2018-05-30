@@ -12,13 +12,17 @@ app.get("/", function(req, res){
 
 app.get("/results", function(req, res){
 	var search = req.query.search;
-	var url = "http://www.omdbapi.com/?apikey=b08e95e3&s=" + search;
-	request(url, function(err, response, body){
-		if(!err && response.statusCode == 200){
-			var data = JSON.parse(body);
-			res.render("results", {data});
-		}
-	})
+	if( search.length > 0){
+		var url = "http://www.omdbapi.com/?apikey=b08e95e3&s=" + search;
+		request(url, function(err, response, body){
+			if(!err && response.statusCode == 200){
+				var data = JSON.parse(body);
+				res.render("results", {data});
+			}
+		})
+	} else {
+		res.redirect("/");
+	}	
 });
 
 app.get("/movie/:id", function(req, res){

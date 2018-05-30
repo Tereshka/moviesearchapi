@@ -1,10 +1,22 @@
 <%include partials/header%>
 
-<h1>Search for a Movie</h1>
+<div class="container text-center">
+	<div class="row">
+		<div class="col">
+			<h1>Search for a Movie</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col">
+			<form class="form-inline justify-content-center" action="/results" method="GET">
+				<label class="sr-only" for="searchTitle">Star Wars</label>
+				<input class="form-control flex-fill" id="searchTitle" type="text" name="search" placeholder="Star Wars">
+				<input class="btn btn-primary" type="submit" value="Submit" >
+			</form>
+		</div>
+	</div>	
+</div>
 
-<form action="/results" method="GET">
-	<input type="text" name="search" placeholder="enter title here">
-	<input type="submit" >
-</form>
+
 
 <%include partials/footer%>
